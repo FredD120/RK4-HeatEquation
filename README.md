@@ -1,4 +1,8 @@
 # Thermal Numerical Model
-#Implementation of the Runge-Kutta 4 numerical method for solving nonlinear ordinary differential equations. Will try use it to solve the heat equation in one and two dimensions.
-#Update: RK4 is not useful for the finite differential method, so using Euler method to solve nonlinear ODEs instead. This is because I have solved in one dimension for around 100 elements using explicit algorithm, but going higher massively increases computing time as the algorithm is divergent if time step is too small. Will try to implement implicit algorithm using linear algebra, but trying to invert the RK4 version of this algorithm would be very difficult. 
-#Update Implemented the reverse Euler technique to stably solve with fewer timesteps and more spacesteps. Used this to upgrade to two dimensions two explore diffusion in x and y directions. Also added a way to download each temperature grid as a seperate file then compile that data into a gif.
+Euler method to solve nonlinear ODE, the diffusion/heat equation. Here is it solved for a one dimensional rod with time on the y axis:
+
+![Img 1](HeatMap1DThermalProblem.png)
+
+For the 2D version, I implemented the reverse Euler technique to stably solve with fewer timesteps and more spacesteps. This is achieved by solving a large set of simultaneous equations using SciPy's linear algebra functionality. Also added a way to download each temperature grid as a seperate file then compile that data into a gif:
+
+![GIF](Large2DTemp.gif)
